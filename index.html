@@ -8,13 +8,13 @@
 
 <title>Micro & Macro Consultoría</title>
 
-<meta name="description" content="Ingeniería eléctrica, automatización industrial, SCADA, PLC, sistemas de control y eficiencia energética.">
+<meta name="description" content="Ingeniería eléctrica, automatización industrial, PLC, SCADA y consultoría técnica especializada.">
 
-<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/favicon.png">
 
 <style>
 
-/* estructura general */
+/* estructura */
 
 body{
 font-family: Arial, Helvetica, sans-serif;
@@ -102,16 +102,27 @@ width:100%;
 border-radius:6px;
 }
 
-/* boton contacto */
+/* formulario */
 
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 25px;
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+input, textarea{
+padding:10px;
+font-size:16px;
+}
+
+button{
 background:#0a2540;
 color:white;
-text-decoration:none;
-border-radius:5px;
+border:none;
+padding:12px;
+cursor:pointer;
 }
 
 /* footer */
@@ -129,12 +140,27 @@ padding:20px;
 position:fixed;
 bottom:25px;
 right:25px;
-width:60px;
-z-index:100;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+animation: pulse 2s infinite;
 }
 
 .whatsapp img{
-width:100%;
+width:35px;
+}
+
+/* animacion */
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
 }
 
 </style>
@@ -153,6 +179,7 @@ width:100%;
 <nav>
 
 <a href="#servicios">Servicios</a>
+<a href="#consultoria">Consultoría Técnica</a>
 <a href="#proyectos">Proyectos</a>
 <a href="#contacto">Contacto</a>
 
@@ -188,7 +215,7 @@ width:100%;
 
 <h3>Automatización Industrial</h3>
 
-<p>Programación PLC, HMI y sistemas SCADA para procesos industriales.</p>
+<p>Programación PLC, HMI y SCADA para procesos industriales.</p>
 
 </div>
 
@@ -217,7 +244,28 @@ width:100%;
 </section>
 
 
-<section id="proyectos" class="section section-grey">
+<section id="consultoria" class="section section-grey">
+
+<h2>Consultoría Técnica y Pericial</h2>
+
+<p>
+
+Asesoramiento técnico especializado en sistemas eléctricos, automatización industrial y control de procesos.
+
+Participación como consultor técnico en evaluaciones de proyectos, auditorías técnicas, análisis de fallas, pericias técnicas y soporte a estudios jurídicos o empresas que requieran opinión técnica especializada.
+
+</p>
+
+<p>
+
+Experiencia en análisis de instalaciones eléctricas industriales, sistemas de control, automatización y eficiencia energética.
+
+</p>
+
+</section>
+
+
+<section id="proyectos" class="section">
 
 <h2>Proyectos</h2>
 
@@ -239,7 +287,7 @@ width:100%;
 
 <h3>Control con PLC</h3>
 
-<p>Arquitecturas de control con PLC Schneider Electric M580 y sistemas redundantes.</p>
+<p>Arquitecturas de control con PLC Schneider Electric M580 Hot StandBy.</p>
 
 </div>
 
@@ -248,13 +296,23 @@ width:100%;
 </section>
 
 
-<section id="contacto" class="section">
+<section id="contacto" class="section section-grey">
 
 <h2>Contacto</h2>
 
-<p>Consultanos para asesoramiento técnico o desarrollo de proyectos.</p>
+<p>Realice su consulta técnica y nos comunicaremos a la brevedad.</p>
 
-<a class="btn" href="mailto:consultas@microymacro.com.ar">Enviar Email</a>
+<form action="https://formspree.io/f/yourcode" method="POST">
+
+<input type="text" name="nombre" placeholder="Nombre" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<textarea name="mensaje" placeholder="Consulta técnica"></textarea>
+
+<button type="submit">Enviar consulta</button>
+
+</form>
 
 </section>
 
@@ -266,14 +324,13 @@ width:100%;
 </footer>
 
 
-<a href="https://wa.me/5491144247440?text=Hola%20me%20gustaría%20que%20me%20asesoren%20por%20una%20consulta%20sobre%20"
+<a href="https://wa.me/5491144247440?text=Hola%20me%20gustaría%20realizar%20una%20consulta%20técnica"
 class="whatsapp"
 target="_blank">
 
 <img src="images/whatsapp-icon.png">
 
 </a>
-
 
 </body>
 
