@@ -1,279 +1,61 @@
-body{
+// SCROLL REVEAL
 
-margin:0;
-font-family:'Montserrat', sans-serif;
-background:#0c0f14;
-color:white;
+function reveal(){
 
-}
+let reveals = document.querySelectorAll(".reveal");
 
+reveals.forEach((el)=>{
 
-/* HEADER */
+let windowHeight = window.innerHeight;
 
-header{
+let elementTop = el.getBoundingClientRect().top;
 
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 50px;
-background:#111;
+let elementVisible = 100;
 
-position:fixed;
-width:100%;
-z-index:1000;
+if(elementTop < windowHeight - elementVisible){
+
+el.classList.add("active");
 
 }
 
-nav ul{
-
-display:flex;
-list-style:none;
-gap:30px;
+});
 
 }
 
-nav a{
+window.addEventListener("scroll", reveal);
 
-color:white;
-text-decoration:none;
-font-weight:500;
 
-}
 
+// COUNTER
 
-/* HERO */
+const counters = document.querySelectorAll(".counter");
 
-.hero{
+counters.forEach(counter=>{
 
-height:100vh;
+counter.innerText="0";
 
-background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url("imagenes/hero-industrial.jpg");
+const updateCounter = ()=>{
 
-background-size:cover;
-background-position:center;
+const target = +counter.getAttribute("data-target");
 
-display:flex;
-align-items:center;
-justify-content:center;
+const c = +counter.innerText;
 
-text-align:center;
+const increment = target/200;
 
-}
+if(c < target){
 
-.hero h1{
+counter.innerText = `${Math.ceil(c + increment)}`;
 
-font-size:48px;
+setTimeout(updateCounter,10);
 
-animation:fadeUp 1.2s;
+}else{
 
-}
-
-.hero p{
-
-font-size:22px;
-margin-top:10px;
-
-animation:fadeUp 1.6s;
-
-}
-
-.btn{
-
-margin-top:30px;
-display:inline-block;
-
-background:#1e90ff;
-padding:12px 30px;
-
-border-radius:5px;
-text-decoration:none;
-color:white;
-
-}
-
-
-/* SECTIONS */
-
-.section{
-
-padding:100px 10%;
-
-text-align:center;
-
-}
-
-
-/* SERVICIOS */
-
-.servicios-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:40px;
-
-margin-top:50px;
-
-}
-
-.servicio img{
-
-width:100%;
-
-border-radius:10px;
-
-transition:0.4s;
-
-}
-
-.servicio img:hover{
-
-transform:scale(1.05);
-
-}
-
-
-/* NUMEROS */
-
-.numeros{
-
-display:flex;
-
-justify-content:center;
-
-gap:80px;
-
-padding:80px;
-
-background:#111;
-
-}
-
-.numero h2{
-
-font-size:40px;
-color:#1e90ff;
-
-}
-
-
-/* CLIENTES */
-
-.clientes-slider{
-
-overflow:hidden;
-
-margin-top:50px;
-
-}
-
-.slide-track{
-
-display:flex;
-
-width:calc(250px * 10);
-
-animation:scroll 25s linear infinite;
-
-}
-
-.slide-track img{
-
-width:200px;
-
-margin:40px;
-
-filter:grayscale(100%);
-
-opacity:0.8;
-
-transition:0.3s;
-
-}
-
-.slide-track img:hover{
-
-filter:none;
-
-opacity:1;
-
-}
-
-
-/* CONTACTO */
-
-.mail{
-
-display:block;
-
-margin-top:20px;
-
-color:#1e90ff;
-
-text-decoration:none;
-
-font-size:18px;
-
-}
-
-
-/* FOOTER */
-
-footer{
-
-padding:30px;
-
-text-align:center;
-
-background:#111;
-
-}
-
-
-/* ANIMACIONES */
-
-@keyframes scroll{
-
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
+counter.innerText = target;
 
 }
 
 }
 
+updateCounter();
 
-/* SCROLL REVEAL */
-
-.reveal{
-
-opacity:0;
-transform:translateY(50px);
-transition:1s;
-
-}
-
-.reveal.active{
-
-opacity:1;
-transform:translateY(0);
-
-}
+});
