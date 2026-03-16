@@ -39,17 +39,99 @@ text-decoration:none;
 color:white;
 font-size:15px;
 }
+<script>
+
+function reveal(){
+
+var reveals = document.querySelectorAll(".reveal");
+
+for(var i = 0; i < reveals.length; i++){
+
+var windowHeight = window.innerHeight;
+var elementTop = reveals[i].getBoundingClientRect().top;
+var elementVisible = 100;
+
+if(elementTop < windowHeight - elementVisible){
+reveals[i].classList.add("active");
+}
+
+}
+
+}
+
+window.addEventListener("scroll", reveal);
+
+</script>
+
+/* HERO */
 
 .hero{
 height:90vh;
-background:url("images/hero-industrial.jpg") center/cover no-repeat;
-position:relative;
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url("imagenes/automatizacion.jpg");
+background-size:cover;
+background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+color:white;
 }
 
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+}
+
+
+/* ANIMACION ENTRADA */
+
+.fade-in{
+opacity:0;
+transform:translateY(30px);
+animation:fadeUp 1.5s ease forwards;
+}
+
+.delay{
+animation-delay:0.5s;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* EFECTO EN IMAGENES */
+
+.servicios img{
+transition:transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.servicios img:hover{
+transform:scale(1.05);
+box-shadow:0px 10px 25px rgba(0,0,0,0.3);
+}
+
+
+/* EFECTO SCROLL */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
 .overlay{
 position:absolute;
 width:100%;
@@ -211,3 +293,4 @@ font-size:18px;
 }
 
 }
+
