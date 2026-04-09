@@ -234,14 +234,15 @@ Empresas que confían en nuestros servicios de ingeniería y automatización ind
 
 function reveal(){
 
-let reveals=document.querySelectorAll(".reveal");
+let reveals = document.querySelectorAll(".reveal");
 
 reveals.forEach((el)=>{
 
-let windowHeight=window.innerHeight;
-let elementTop=el.getBoundingClientRect().top;
+let windowHeight = window.innerHeight;
+let elementTop = el.getBoundingClientRect().top;
+let elementVisible = 120;
 
-if(elementTop<windowHeight-100){
+if(elementTop < windowHeight - elementVisible){
 el.classList.add("active");
 }
 
@@ -249,7 +250,11 @@ el.classList.add("active");
 
 }
 
-window.addEventListener("scroll",reveal);
+// 🔥 se ejecuta al cargar (CLAVE)
+window.addEventListener("load", reveal);
+
+// 🔥 se ejecuta al hacer scroll
+window.addEventListener("scroll", reveal);
 
 </script>
 
