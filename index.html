@@ -26,7 +26,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* HERO MEJORADO */
+/* HERO */
 
 .hero{
 animation:zoomHero 12s ease-in-out infinite alternate;
@@ -48,7 +48,7 @@ transform:translateY(-10px) scale(1.02);
 box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* CLIENTES HOME */
+/* CLIENTES */
 
 .slider{
 overflow:hidden;
@@ -58,7 +58,7 @@ margin-top:40px;
 .slide-track{
 display:flex;
 gap:60px;
-animation:scroll 30s linear infinite;
+animation:scroll 20s linear infinite;
 }
 
 .slide-track img{
@@ -78,6 +78,59 @@ filter:none;
 100%{transform:translateX(-50%);}
 }
 
+/* METRICAS */
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+margin-top:60px;
+text-align:center;
+}
+
+.metric{
+background:#111827;
+padding:30px;
+border-radius:10px;
+}
+
+.metric h3{
+font-size:32px;
+color:#1e90ff;
+margin-bottom:10px;
+}
+
+.metric p{
+color:#cbd5e1;
+}
+
+/* INDUSTRIAS */
+
+.industries{
+margin-top:50px;
+}
+
+.badge{
+display:inline-block;
+margin:6px;
+padding:8px 14px;
+background:#1e293b;
+border-radius:20px;
+font-size:13px;
+color:#94a3b8;
+}
+
+/* MENSAJE FINAL */
+
+.closing{
+margin-top:60px;
+font-size:18px;
+color:#cbd5e1;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
 </style>
 
 </head>
@@ -85,9 +138,7 @@ filter:none;
 <body>
 
 <header>
-
 <div class="container">
-
 <div class="logo">Micro & Macro Consultoría</div>
 
 <nav>
@@ -96,94 +147,75 @@ filter:none;
 <a href="#proyectos">Proyectos</a>
 <a href="#contacto">Contacto</a>
 </nav>
-
 </div>
-
 </header>
 
 <section class="hero">
-
 <div class="overlay"></div>
 
 <div class="hero-text reveal">
-
 <h1>Ingeniería y Automatización Industrial</h1>
-
 <p>SCADA · PLC · Sistemas eléctricos · Integración industrial</p>
-
 </div>
-
 </section>
 
 <section id="servicios" class="section reveal">
-
 <h2>Servicios</h2>
 
 <div class="grid">
-
 <div class="card">
 <img src="images/plc-control.jpg">
 <h3>Automatización Industrial</h3>
-<p>Programación PLC, HMI y SCADA para procesos industriales.</p>
+<p>Programación PLC, HMI y SCADA.</p>
 </div>
 
 <div class="card">
 <img src="images/tablero-electrico.jpg">
 <h3>Ingeniería Eléctrica</h3>
-<p>Diseño y desarrollo de tableros eléctricos de potencia y control.</p>
+<p>Diseño de tableros eléctricos.</p>
 </div>
 
 <div class="card">
 <img src="images/automatizacion-linea.jpg">
 <h3>Integración de Sistemas</h3>
-<p>Automatización de líneas de producción y procesos industriales.</p>
+<p>Automatización de procesos industriales.</p>
 </div>
-
 </div>
-
 </section>
 
 <section id="consultoria" class="section section-grey reveal">
-
 <h2>Consultoría y Pericial</h2>
-
 <p>
-Asesoramiento en sistemas eléctricos, automatización industrial y control de procesos.
-Participación como consultor en evaluaciones de proyectos, auditorías, análisis de fallas y pericias.
+Asesoramiento en sistemas eléctricos y automatización.
+Auditorías, análisis de fallas y evaluación de proyectos.
 </p>
-
 </section>
 
 <section id="proyectos" class="section reveal">
-
 <h2>Proyectos</h2>
 
 <div class="grid">
-
 <div class="card">
 <img src="images/hero-industrial.jpg">
 <h3>Sistemas SCADA</h3>
-<p>Implementación de sistemas SCADA para monitoreo industrial.</p>
+<p>Monitoreo industrial.</p>
 </div>
 
 <div class="card">
 <img src="images/plc-control.jpg">
 <h3>Control con PLC</h3>
-<p>Arquitecturas de control con PLC Schneider Electric M580.</p>
+<p>Arquitecturas con PLC M580.</p>
 </div>
-
 </div>
-
 </section>
 
-<!-- CLIENTES EN HOME -->
+<!-- CLIENTES -->
 
 <section class="section reveal">
 
 <h2>Nuestros Clientes</h2>
 
 <div class="slider">
-
 <div class="slide-track">
 
 <img src="images/trend.png">
@@ -197,71 +229,82 @@ Participación como consultor en evaluaciones de proyectos, auditorías, anális
 <img src="images/decavial.jpg">
 
 </div>
+</div>
+
+<!-- METRICAS -->
+
+<div class="metrics reveal">
+
+<div class="metric">
+<h3>+15</h3>
+<p>Proyectos ejecutados</p>
+</div>
+
+<div class="metric">
+<h3>+5</h3>
+<p>Industrias atendidas</p>
+</div>
+
+<div class="metric">
+<h3>100%</h3>
+<p>Compromiso técnico</p>
+</div>
 
 </div>
 
-<a href="clientes.html" class="btn-clientes">Ver Clientes</a>
+<!-- INDUSTRIAS -->
+
+<div class="industries reveal">
+
+<span class="badge">Oil & Gas</span> <span class="badge">Energía</span> <span class="badge">Industria</span> <span class="badge">Infraestructura</span> <span class="badge">Automatización</span>
+
+</div>
+
+<!-- MENSAJE -->
+
+<p class="closing reveal">
+Brindamos soluciones de ingeniería confiables, orientadas a resultados
+y adaptadas a las necesidades de cada industria.
+</p>
 
 </section>
 
 <section id="contacto" class="section section-grey reveal">
-
 <h2>Contacto</h2>
 
-<p>Realice su consulta y nos comunicaremos a la brevedad.</p>
-
 <form action="https://formspree.io/f/xpqylnwl" method="POST">
-
 <input type="text" name="nombre" placeholder="Nombre" required>
-
 <input type="email" name="email" placeholder="Email" required>
-
 <textarea name="mensaje" placeholder="Consulta"></textarea>
-
 <button type="submit">Enviar consulta</button>
-
 </form>
-
 </section>
 
 <footer>
-
 <p>© Micro & Macro Consultoría</p>
-
 </footer>
 
 <a href="https://wa.me/5491144247440?text=Hola%20quisiera%20realizar%20una%20consulta"
 class="whatsapp"
-target="_blank">
-
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg">
-
-</a>
+target="_blank"> <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg"> </a>
 
 <script>
 
-/* ANIMACION SCROLL */
-
 function reveal(){
-
-let reveals = document.querySelectorAll(".reveal");
+let reveals=document.querySelectorAll(".reveal");
 
 reveals.forEach((el)=>{
+let windowHeight=window.innerHeight;
+let elementTop=el.getBoundingClientRect().top;
 
-let windowHeight = window.innerHeight;
-let elementTop = el.getBoundingClientRect().top;
-let elementVisible = 120;
-
-if(elementTop < windowHeight - elementVisible){
+if(elementTop<windowHeight-120){
 el.classList.add("active");
 }
-
 });
-
 }
 
-window.addEventListener("load", reveal);
-window.addEventListener("scroll", reveal);
+window.addEventListener("load",reveal);
+window.addEventListener("scroll",reveal);
 
 </script>
 
