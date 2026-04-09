@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -8,19 +9,76 @@
 
 <title>Micro & Macro Consultoría | Ingeniería y Automatización Industrial</title>
 
-<meta name="description" content="Micro & Macro Consultoría brinda servicios de ingeniería y automatización industrial: SCADA, PLC, sistemas eléctricos e integración industrial.">
-
-<meta name="keywords" content="automatización industrial, PLC, SCADA, ingeniería eléctrica, integración industrial">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://www.microymacro.com.ar">
-
 <link rel="stylesheet" href="styles.css">
 
-<meta property="og:title" content="Micro & Macro Consultoría">
-<meta property="og:description" content="Ingeniería y Automatización Industrial – SCADA · PLC · Sistemas eléctricos">
-<meta property="og:type" content="website">
+<style>
+
+/* ANIMACIONES */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* HERO MEJORADO */
+
+.hero{
+animation:zoomHero 12s ease-in-out infinite alternate;
+}
+
+@keyframes zoomHero{
+0%{background-size:100%;}
+100%{background-size:110%;}
+}
+
+/* TARJETAS */
+
+.card{
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* CLIENTES HOME */
+
+.slider{
+overflow:hidden;
+margin-top:40px;
+}
+
+.slide-track{
+display:flex;
+gap:60px;
+animation:scroll 30s linear infinite;
+}
+
+.slide-track img{
+height:60px;
+opacity:0.7;
+filter:grayscale(100%);
+transition:0.3s;
+}
+
+.slide-track img:hover{
+opacity:1;
+filter:none;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+</style>
 
 </head>
 
@@ -47,7 +105,7 @@
 
 <div class="overlay"></div>
 
-<div class="hero-text">
+<div class="hero-text reveal">
 
 <h1>Ingeniería y Automatización Industrial</h1>
 
@@ -57,47 +115,35 @@
 
 </section>
 
-<section id="servicios" class="section">
+<section id="servicios" class="section reveal">
 
 <h2>Servicios</h2>
 
 <div class="grid">
 
 <div class="card">
-
 <img src="images/plc-control.jpg">
-
 <h3>Automatización Industrial</h3>
-
 <p>Programación PLC, HMI y SCADA para procesos industriales.</p>
-
 </div>
 
 <div class="card">
-
 <img src="images/tablero-electrico.jpg">
-
 <h3>Ingeniería Eléctrica</h3>
-
 <p>Diseño y desarrollo de tableros eléctricos de potencia y control.</p>
-
 </div>
 
 <div class="card">
-
 <img src="images/automatizacion-linea.jpg">
-
 <h3>Integración de Sistemas</h3>
-
 <p>Automatización de líneas de producción y procesos industriales.</p>
-
 </div>
 
 </div>
 
 </section>
 
-<section id="consultoria" class="section section-grey">
+<section id="consultoria" class="section section-grey reveal">
 
 <h2>Consultoría y Pericial</h2>
 
@@ -108,47 +154,57 @@ Participación como consultor en evaluaciones de proyectos, auditorías, anális
 
 </section>
 
-<section id="proyectos" class="section">
+<section id="proyectos" class="section reveal">
 
 <h2>Proyectos</h2>
 
 <div class="grid">
 
 <div class="card">
-
 <img src="images/hero-industrial.jpg">
-
 <h3>Sistemas SCADA</h3>
-
 <p>Implementación de sistemas SCADA para monitoreo industrial.</p>
-
 </div>
 
 <div class="card">
-
 <img src="images/plc-control.jpg">
-
 <h3>Control con PLC</h3>
-
-<p>Arquitecturas de control con PLC Schneider Electric, SIEMENS, ROCKWELL.</p>
-
+<p>Arquitecturas de control con PLC Schneider Electric M580.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="clientes">
+<!-- CLIENTES EN HOME -->
+
+<section class="section reveal">
 
 <h2>Nuestros Clientes</h2>
 
-<p>Empresas que confiaron en nuestros servicios de ingeniería.</p>
+<div class="slider">
+
+<div class="slide-track">
+
+<img src="images/trend.png">
+<img src="images/aires.png">
+<img src="images/bhy.svg">
+<img src="images/decavial.jpg">
+
+<img src="images/trend.png">
+<img src="images/aires.png">
+<img src="images/bhy.svg">
+<img src="images/decavial.jpg">
+
+</div>
+
+</div>
 
 <a href="clientes.html" class="btn-clientes">Ver Clientes</a>
 
 </section>
 
-<section id="contacto" class="section section-grey">
+<section id="contacto" class="section section-grey reveal">
 
 <h2>Contacto</h2>
 
@@ -181,6 +237,33 @@ target="_blank">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg">
 
 </a>
+
+<script>
+
+/* ANIMACION SCROLL */
+
+function reveal(){
+
+let reveals = document.querySelectorAll(".reveal");
+
+reveals.forEach((el)=>{
+
+let windowHeight = window.innerHeight;
+let elementTop = el.getBoundingClientRect().top;
+let elementVisible = 120;
+
+if(elementTop < windowHeight - elementVisible){
+el.classList.add("active");
+}
+
+});
+
+}
+
+window.addEventListener("load", reveal);
+window.addEventListener("scroll", reveal);
+
+</script>
 
 </body>
 </html>
