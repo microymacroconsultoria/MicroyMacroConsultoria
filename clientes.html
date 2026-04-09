@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -12,41 +13,135 @@
 
 <style>
 
-.construccion{
+body{
+margin:0;
+background:#0f1720;
+color:white;
+font-family:Arial, Helvetica, sans-serif;
+}
 
-height:70vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+/* CONTENEDOR */
+
+.container{
+padding:60px 20px;
 text-align:center;
-padding:40px;
-
 }
 
-.construccion h1{
-
+h1{
 font-size:42px;
-margin-bottom:20px;
-
+margin-bottom:10px;
 }
 
-.construccion p{
-
-max-width:600px;
+.sub{
+max-width:700px;
+margin:auto;
 font-size:18px;
-
+color:#cbd5e1;
+margin-bottom:50px;
 }
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:10px;
+transition:0.3s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.active{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* IMAGENES */
+
+.card img{
+max-width:140px;
+height:70px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+/* TEXTO SIEMPRE VISIBLE */
+
+.card h3{
+font-size:15px;
+margin-bottom:10px;
+color:white;
+}
+
+/* BADGES */
+
+.badge{
+display:inline-block;
+font-size:12px;
+padding:4px 10px;
+border-radius:20px;
+margin:2px;
+background:#1e293b;
+color:#94a3b8;
+}
+
+/* BOTON */
 
 .volver{
-
-margin-top:30px;
+display:inline-block;
+margin-top:60px;
 padding:12px 25px;
 background:#1e90ff;
 color:white;
 text-decoration:none;
 border-radius:6px;
+}
 
+.volver:hover{
+background:#2563eb;
+}
+
+/* CARRUSEL */
+
+.slider{
+overflow:hidden;
+margin-top:60px;
+}
+
+.slide-track{
+display:flex;
+gap:60px;
+animation:scroll 25s linear infinite;
+}
+
+.slide-track img{
+height:50px;
+opacity:0.7;
+filter:grayscale(100%);
+transition:0.3s;
+}
+
+.slide-track img:hover{
+opacity:1;
+filter:none;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
 </style>
@@ -55,23 +150,108 @@ border-radius:6px;
 
 <body>
 
-<section class="construccion">
+<div class="container">
 
-<h1>Sección en construcción</h1>
+<h1>Nuestros Clientes</h1>
 
-<p>
-Estamos preparando esta sección para mostrar algunos de los proyectos
-y empresas que han confiado en nuestros servicios de ingeniería y automatización industrial.
+<p class="sub">
+Empresas que confían en nuestros servicios de ingeniería y automatización industrial.
 </p>
 
-<p>
-Muy pronto podrás conocer más sobre nuestras experiencias,
-implementaciones y colaboraciones en el sector industrial.
-</p>
+<div class="grid">
+
+<!-- CLIENTE 1 -->
+
+<div class="card reveal">
+<img src="images/trend.png" onerror="this.style.display='none'">
+<h3>TREND Ingeniería</h3>
+<div>
+<span class="badge">Automatización</span>
+<span class="badge">Industria</span>
+</div>
+</div>
+
+<!-- CLIENTE 2 -->
+
+<div class="card reveal">
+<img src="images/aires.png" onerror="this.style.display='none'">
+<h3>AIRES Renewables</h3>
+<div>
+<span class="badge">Energía</span>
+<span class="badge">Renovables</span>
+</div>
+</div>
+
+<!-- CLIENTE 3 -->
+
+<div class="card reveal">
+<img src="images/bhy.svg" onerror="this.style.display='none'">
+<h3>BHY S.A.</h3>
+<div>
+<span class="badge">Oil & Gas</span>
+<span class="badge">Ingeniería</span>
+</div>
+</div>
+
+<!-- CLIENTE 4 -->
+
+<div class="card reveal">
+<img src="images/decavial.jpg" onerror="this.style.display='none'">
+<h3>DECAVIAL S.A.I.C.A.C.</h3>
+<div>
+<span class="badge">Construcción</span>
+<span class="badge">Infraestructura</span>
+</div>
+</div>
+
+</div>
+
+<!-- CARRUSEL -->
+
+<div class="slider">
+
+<div class="slide-track">
+
+<img src="images/trend.png">
+<img src="images/aires.png">
+<img src="images/bhy.svg">
+<img src="images/decavial.jpg">
+
+<img src="images/trend.png">
+<img src="images/aires.png">
+<img src="images/bhy.svg">
+<img src="images/decavial.jpg">
+
+</div>
+
+</div>
 
 <a href="index.html" class="volver">Volver al sitio</a>
 
-</section>
+</div>
+
+<script>
+
+function reveal(){
+
+let reveals=document.querySelectorAll(".reveal");
+
+reveals.forEach((el)=>{
+
+let windowHeight=window.innerHeight;
+let elementTop=el.getBoundingClientRect().top;
+
+if(elementTop<windowHeight-100){
+el.classList.add("active");
+}
+
+});
+
+}
+
+window.addEventListener("scroll",reveal);
+
+</script>
 
 </body>
 
