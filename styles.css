@@ -276,9 +276,14 @@ border:1px solid #ccc;
 border-radius:5px;
 font-size:15px;
 }
-
 #contacto textarea{
-min-height:120px;
+min-height:140px;
+resize:vertical;
+display:block;
+}
+#contacto textarea{
+min-height:140px;   /* altura real tipo 4 líneas */
+resize:vertical;
 }
 
 #contacto button{
