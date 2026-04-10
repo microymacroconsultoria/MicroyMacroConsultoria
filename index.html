@@ -259,24 +259,31 @@ y adaptadas a las necesidades de cada industria.
   </div>
 
   <!-- FORMULARIO -->
-  <form action="https://formspree.io/f/xpqylnwl" method="POST" class="form-grid">
+<form action="https://formspree.io/f/xpqylnwl" method="POST" class="form-grid"> 
+<!-- Formulario que envía los datos a Formspree | class form-grid activa el layout en grilla -->
 
-    <!-- FILA 1 -->
-    <input type="text" name="nombre" placeholder="Nombre" required>
-    <input type="text" name="apellido" placeholder="Apellido">
+<input type="text" name="nombre" placeholder="Nombre" required> 
+<!-- Campo de texto obligatorio para el nombre -->
 
-    <!-- FILA 2 -->
-    <input type="text" name="empresa" placeholder="Empresa">
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="text" name="telefono" placeholder="Teléfono">
+<input type="text" name="apellido" placeholder="Apellido"> 
+<!-- Campo opcional para apellido -->
 
-    <!-- MENSAJE -->
-    <textarea name="mensaje" placeholder="Consulta" required></textarea>
+<input type="text" name="empresa" placeholder="Empresa"> 
+<!-- Campo opcional para empresa -->
 
-    <!-- BOTÓN -->
-    <button type="submit">Enviar consulta</button>
+<input type="email" name="email" placeholder="Email" required> 
+<!-- Campo obligatorio tipo email (valida formato automáticamente) -->
 
-  </form>
+<input type="tel" name="telefono" placeholder="Teléfono"> 
+<!-- Campo opcional para teléfono -->
+
+<textarea name="mensaje" placeholder="Mensaje"></textarea> 
+<!-- Área de texto para escribir el mensaje -->
+
+<button type="submit">Enviar</button> 
+<!-- Botón que envía el formulario -->
+
+</form>
 
 </div>
 
