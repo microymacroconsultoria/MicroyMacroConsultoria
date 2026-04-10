@@ -1,23 +1,97 @@
-<section id="quienes" class="section reveal">
+<!DOCTYPE html> <!-- Documento HTML5 -->
+
+<html lang="es"> <!-- Idioma español -->
+
+<head>
+
+<meta charset="UTF-8"> <!-- Soporte de caracteres -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+
+<title>Quiénes Somos | Micro & Macro Consultoría</title>
+
+<link rel="stylesheet" href="styles.css"> <!-- Usa el MISMO CSS que el index -->
+
+</head>
+
+<body>
+
+<header> <!-- Header igual al index -->
+<div class="container">
+
+<div class="logo">Micro & Macro Consultoría</div>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="index.html#servicios">Servicios</a>
+<a href="index.html#consultoria">Consultoría</a>
+<a href="index.html#proyectos">Proyectos</a>
+<a href="index.html#contacto">Contacto</a>
+</nav>
+
+</div>
+</header>
+
+<!-- SECCIÓN PRINCIPAL -->
+
+<section class="section reveal" style="padding-top:120px;"> <!-- Compensa header fijo -->
 
 <h2>Quiénes Somos</h2>
 
-<p class="texto-quienes">
+<p style="
+max-width:900px;
+margin:30px auto;
+text-align:justify;
+line-height:1.8;
+color:#cbd5e1;
+">
 
-Micro & Macro Consultoría nace con el objetivo de brindar soluciones de ingeniería orientadas a la eficiencia de los procesos, reduciendo el consumo energético, aumentando la confiabilidad y acompañando la evolución tecnológica de la industria.
+Micro & Macro Consultoría nace con el objetivo de brindar soluciones de ingeniería orientadas a la eficiencia de procesos, reduciendo consumos energéticos, aumentando la confiabilidad y acompañando la evolución tecnológica de la industria.
 
-A lo largo de nuestra experiencia, hemos acompañado a empresas de diversos sectores —agua y saneamiento, energía, oil & gas, industria e infraestructura— en el desarrollo e implementación de sus sistemas.
+<br><br>
 
-Nuestro enfoque combina una visión integral del proceso (“macro”) con un análisis técnico detallado de cada sistema (“micro”), lo que nos permite diseñar soluciones robustas, escalables y alineadas a las necesidades reales de cada cliente.
+A lo largo de nuestra experiencia, hemos trabajado con empresas de sectores como agua y saneamiento, energía, oil & gas, industria e infraestructura, participando en el desarrollo e implementación de sistemas eléctricos y de automatización.
 
-Trabajamos junto a compañías que buscan mejorar su productividad, optimizar la gestión energética y asegurar la continuidad operativa sin comprometer la calidad.
+<br><br>
 
-Para ello, participamos en asesoramiento para licitaciones públicas y privadas, elaboración de especificaciones técnicas y análisis técnico-económicos.
+Nuestro enfoque combina una visión global del proceso (“macro”) con un análisis técnico detallado (“micro”), lo que nos permite diseñar soluciones robustas, escalables y alineadas a las necesidades reales de cada cliente.
 
-Más que proveedores, nos posicionamos como socios técnicos estratégicos, comprometidos con resultados concretos y sostenibles en el tiempo.
+<br><br>
+
+Acompañamos a compañías que buscan mejorar su productividad, optimizar su gestión energética y asegurar la continuidad operativa, manteniendo altos estándares de calidad.
+
+<br><br>
+
+Participamos en licitaciones públicas y privadas, elaboración de especificaciones técnicas y análisis técnico-económicos, posicionándonos como socios técnicos estratégicos comprometidos con resultados concretos y sostenibles.
 
 </p>
 
-<a href="index.html" class="btn-clientes">Volver al sitio</a>
+<!-- BOTÓN VOLVER -->
+
+<a href="index.html" class="volver">Volver al sitio</a>
 
 </section>
+
+<footer>
+<p>© Micro & Macro Consultoría</p>
+</footer>
+
+<script>
+function reveal(){
+let reveals=document.querySelectorAll(".reveal");
+
+reveals.forEach((el)=>{
+let windowHeight=window.innerHeight;
+let elementTop=el.getBoundingClientRect().top;
+
+if(elementTop<windowHeight-120){
+el.classList.add("active");
+}
+});
+}
+
+window.addEventListener("load",reveal);
+window.addEventListener("scroll",reveal);
+</script>
+
+</body>
+</html>
