@@ -185,7 +185,88 @@ color:#94a3b8; /* Color */
 
 #contacto{ /* Sección contacto */
 padding-top:100px; /* Espacio superior extra */
+/* =========================
+FORMULARIO TIPO EMPRESA
+========================= */
+
+.form-grid{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:15px;
+  margin-top:30px;
 }
+
+/* INPUTS GENERALES */
+
+.form-grid input,
+.form-grid textarea{
+  background:#0f1720; /* fondo oscuro acorde a tu web */
+  color:white;
+  border:1px solid #2a3441;
+  padding:12px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* PLACEHOLDER */
+
+.form-grid input::placeholder,
+.form-grid textarea::placeholder{
+  color:#94a3b8;
+}
+
+/* DISTRIBUCIÓN */
+
+/* fila 1 */
+.form-grid input[name="nombre"]{ grid-column: span 3; }
+.form-grid input[name="apellido"]{ grid-column: span 3; }
+
+/* fila 2 */
+.form-grid input[name="empresa"]{ grid-column: span 2; }
+.form-grid input[name="email"]{ grid-column: span 2; }
+.form-grid input[name="telefono"]{ grid-column: span 2; }
+
+/* textarea */
+.form-grid textarea{
+  grid-column: span 6;
+  min-height:140px;
+  resize:vertical;
+}
+
+/* BOTÓN */
+
+.form-grid button{
+  grid-column: span 6;
+  background:#e11d2e; /* rojo como en tu ejemplo */
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.form-grid button:hover{
+  background:#b91c1c;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid input,
+  .form-grid textarea,
+  .form-grid button{
+    grid-column: span 1 !important;
+  }
+
+}
+  }
 
 /* =========================
 SECCIÓN QUIÉNES SOMOS - TEXTO
