@@ -1,390 +1,276 @@
-*{ /* Selector universal: aplica a TODOS los elementos */
-margin:0; /* Elimina márgenes por defecto */
-padding:0; /* Elimina padding por defecto */
-box-sizing:border-box; /* Incluye padding y border dentro del tamaño total */
-font-family:Arial, Helvetica, sans-serif; /* Fuente global */
+/* =========================
+RESET GENERAL
+========================= */
+
+*{ /* Aplica a todos los elementos de la página */
+  margin:0; /* Elimina márgenes por defecto del navegador */
+  padding:0; /* Elimina rellenos internos por defecto */
+  box-sizing:border-box; /* Hace que padding y border no agranden el tamaño total */
+  font-family:Arial, Helvetica, sans-serif; /* Define la fuente general */
 }
 
-body{ /* Cuerpo de la página */
-background:#0b0f14; /* Fondo oscuro */
-color:white; /* Texto en blanco */
-line-height:1.6; /* Espaciado entre líneas */
+body{ /* Cuerpo principal */
+  background:#0b0f14; /* Fondo oscuro */
+  color:white; /* Texto blanco */
+  line-height:1.6; /* Espaciado entre líneas para mejor lectura */
 }
 
-.container{ /* Contenedor principal */
-width:90%; /* Ocupa el 90% del ancho */
-max-width:1200px; /* Máximo ancho */
-margin:auto; /* Centrado horizontal */
-display:flex; /* Layout flexible */
-justify-content:space-between; /* Separa elementos */
-align-items:center; /* Alinea verticalmente */
+/* =========================
+CONTENEDOR PRINCIPAL
+========================= */
+
+.container{ /* Contenedor reutilizable */
+  width:90%; /* Ocupa el 90% del ancho */
+  max-width:1200px; /* Máximo ancho permitido */
+  margin:auto; /* Centrado horizontal */
+  display:flex; /* Usa flexbox */
+  justify-content:space-between; /* Separa elementos */
+  align-items:center; /* Alinea verticalmente */
 }
 
-header{ /* Encabezado */
-background:#111; /* Fondo oscuro */
-position:fixed; /* Fijo arriba */
-width:100%; /* Ocupa todo el ancho */
-z-index:1000; /* Prioridad sobre otros elementos */
-padding:15px 0; /* Espaciado vertical */
+/* =========================
+HEADER
+========================= */
+
+header{ /* Encabezado fijo */
+  background:#111; /* Fondo oscuro */
+  position:fixed; /* Fijo arriba */
+  width:100%; /* Ocupa todo el ancho */
+  z-index:1000; /* Se superpone a todo */
+  padding:15px 0; /* Espaciado vertical */
 }
 
-.logo{ /* Logo */
-font-weight:bold; /* Negrita */
-font-size:20px; /* Tamaño */
+.logo{ /* Texto/logo */
+  font-weight:bold; /* Negrita */
+  font-size:20px; /* Tamaño */
 }
 
 nav a{ /* Links del menú */
-margin-left:20px; /* Separación entre links */
-text-decoration:none; /* Sin subrayado */
-color:white; /* Color blanco */
-font-size:15px; /* Tamaño */
+  margin-left:20px; /* Separación entre links */
+  text-decoration:none; /* Sin subrayado */
+  color:white; /* Color blanco */
+  font-size:15px; /* Tamaño */
 }
 
+/* =========================
+HERO (PORTADA)
+========================= */
+
 .hero{ /* Sección principal */
-height:90vh; /* Altura 90% de pantalla */
-background:url("images/hero-industrial.jpg") center/cover no-repeat; /* Imagen de fondo */
-position:relative; /* Para posicionar overlay */
-display:flex; /* Flexbox */
-align-items:center; /* Centrado vertical */
-justify-content:center; /* Centrado horizontal */
-text-align:center; /* Texto centrado */
+  height:90vh; /* Altura del 90% de la pantalla */
+  background:url("images/hero-industrial.jpg") center/cover no-repeat; /* Imagen de fondo */
+  position:relative; /* Permite overlay */
+  display:flex; /* Flexbox */
+  align-items:center; /* Centrado vertical */
+  justify-content:center; /* Centrado horizontal */
+  text-align:center; /* Texto centrado */
 }
 
 .overlay{ /* Capa oscura sobre imagen */
-position:absolute; /* Posición absoluta */
-width:100%; /* Ancho total */
-height:100%; /* Alto total */
-background:rgba(0,0,0,0.35); /* Oscurece imagen */
+  position:absolute; /* Posición absoluta */
+  width:100%; /* Ancho completo */
+  height:100%; /* Alto completo */
+  background:rgba(0,0,0,0.35); /* Oscurece la imagen */
 }
 
-.hero-text{ /* Texto del hero */
-position:relative; /* Para estar sobre overlay */
-z-index:2; /* Prioridad superior */
-max-width:700px; /* Limita ancho */
+.hero-text{ /* Contenedor del texto */
+  position:relative; /* Sobre overlay */
+  z-index:2; /* Prioridad superior */
+  max-width:700px; /* Limita el ancho */
 }
 
 .hero-text h1{ /* Título principal */
-font-size:48px; /* Tamaño grande */
-margin-bottom:12px; /* Espacio abajo */
-text-shadow:0px 3px 12px rgba(0,0,0,0.9); /* Sombra */
+  font-size:48px; /* Tamaño grande */
+  margin-bottom:12px; /* Espacio abajo */
+  text-shadow:0px 3px 12px rgba(0,0,0,0.9); /* Sombra */
 }
 
 .hero-text p{ /* Subtítulo */
-font-size:22px; /* Tamaño */
-text-shadow:0px 2px 10px rgba(0,0,0,0.9); /* Sombra */
+  font-size:22px; /* Tamaño */
+  text-shadow:0px 2px 10px rgba(0,0,0,0.9); /* Sombra */
 }
 
-.section{ /* Secciones generales */
-padding:80px 20px; /* Espaciado interno */
-max-width:1200px; /* Ancho máximo */
-margin:auto; /* Centrado */
-text-align:center; /* Texto centrado */
+/* =========================
+SECCIONES GENERALES
+========================= */
+
+.section{ /* Secciones */
+  padding:80px 20px; /* Espaciado interno */
+  max-width:1200px; /* Ancho máximo */
+  margin:auto; /* Centrado */
+  text-align:center; /* Texto centrado */
 }
 
 .section-grey{ /* Secciones claras */
-background:#f3f3f3; /* Fondo gris claro */
-color:#333; /* Texto oscuro */
+  background:#f3f3f3; /* Fondo gris claro */
+  color:#333; /* Texto oscuro */
 }
 
-.grid{ /* Layout en grilla */
-display:grid; /* Grid */
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* Columnas adaptables */
-gap:30px; /* Espacio entre elementos */
-margin-top:40px; /* Separación superior */
+/* =========================
+GRID
+========================= */
+
+.grid{ /* Sistema de grilla */
+  display:grid; /* Activa grid */
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* Columnas adaptables */
+  gap:30px; /* Espacio entre elementos */
+  margin-top:40px; /* Separación superior */
 }
+
+/* =========================
+TARJETAS
+========================= */
 
 .card{ /* Tarjetas */
-background:#151a21; /* Fondo oscuro */
-padding:20px; /* Espaciado interno */
-border-radius:6px; /* Bordes redondeados */
-transition:transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
+  background:#151a21; /* Fondo oscuro */
+  padding:20px; /* Espaciado interno */
+  border-radius:6px; /* Bordes redondeados */
+  transition:transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
 }
 
-.card:hover{ /* Hover tarjeta */
-transform:translateY(-8px) scale(1.02); /* Eleva y agranda */
-box-shadow:0 15px 35px rgba(0,0,0,0.4); /* Sombra */
+.card:hover{ /* Hover */
+  transform:translateY(-8px) scale(1.02); /* Se eleva */
+  box-shadow:0 15px 35px rgba(0,0,0,0.4); /* Sombra */
 }
 
-.card img{ /* Imagen tarjeta */
-width:100%; /* Ancho completo */
-height:180px; /* Altura fija */
-object-fit:cover; /* Ajusta imagen */
-border-radius:4px; /* Bordes redondeados */
-transition:transform 0.3s ease; /* Animación */
+.card img{ /* Imagen */
+  width:100%; /* Ancho completo */
+  height:180px; /* Altura fija */
+  object-fit:cover; /* Ajuste */
+  border-radius:4px; /* Bordes */
+  transition:transform 0.3s ease; /* Animación */
 }
 
 .card:hover img{ /* Hover imagen */
-transform:scale(1.05); /* Zoom */
+  transform:scale(1.05); /* Zoom */
 }
 
-.slider{ /* Contenedor carrusel */
-overflow:hidden; /* Oculta desbordes */
-margin-top:40px; /* Espacio superior */
+/* =========================
+CLIENTES (SLIDER)
+========================= */
+
+.slider{ /* Contenedor */
+  overflow:hidden; /* Oculta desbordes */
+  margin-top:40px; /* Separación */
 }
 
-.slide-track{ /* Pista de logos */
-display:flex; /* Horizontal */
-gap:60px; /* Espacio */
-animation:scroll 20s linear infinite; /* Movimiento continuo */
+.slide-track{ /* Pista */
+  display:flex; /* Horizontal */
+  gap:60px; /* Espacio */
+  animation:scroll 20s linear infinite; /* Movimiento */
 }
 
 .slide-track img{ /* Logos */
-height:80px; /* Altura */
-opacity:0.7; /* Transparencia */
-filter:grayscale(100%); /* Blanco y negro */
-transition:0.3s; /* Animación */
+  height:80px; /* Tamaño */
+  opacity:0.7; /* Transparencia */
+  filter:grayscale(100%); /* Blanco y negro */
+  transition:0.3s; /* Animación */
 }
 
-.slide-track img:hover{ /* Hover logos */
-opacity:1; /* Visible */
-filter:none; /* Color original */
+.slide-track img:hover{ /* Hover */
+  opacity:1; /* Visible */
+  filter:none; /* Color */
 }
 
-@keyframes scroll{ /* Animación scroll */
-0%{transform:translateX(0);} /* Inicio */
-100%{transform:translateX(-50%);} /* Desplazamiento */
+@keyframes scroll{ /* Animación */
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
 }
 
-.metrics{ /* Contenedor métricas */
-display:grid; /* Grilla */
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); /* Responsive */
-gap:30px; /* Espaciado */
-margin-top:60px; /* Separación */
-text-align:center; /* Centrado */
-}
-
-.metric{ /* Tarjeta métrica */
-background:#111827; /* Fondo */
-padding:30px; /* Espaciado */
-border-radius:10px; /* Bordes */
-}
-
-.metric h3{ /* Número */
-font-size:32px; /* Tamaño */
-color:#1e90ff; /* Azul */
-margin-bottom:10px; /* Espacio */
-}
-
-.metric p{ /* Texto */
-color:#cbd5e1; /* Gris claro */
-}
-
-.industries{ /* Contenedor industrias */
-margin-top:50px; /* Separación */
-}
-
-.badge{ /* Etiquetas */
-display:inline-block; /* Inline */
-margin:6px; /* Espacio */
-padding:8px 14px; /* Padding */
-background:#1e293b; /* Fondo */
-border-radius:20px; /* Forma */
-font-size:13px; /* Tamaño */
-color:#94a3b8; /* Color */
-}
-
-#contacto{ /* Sección contacto */
 /* =========================
-FORMULARIO EN GRILLA (DESKTOP)
+METRICAS
 ========================= */
 
-.form-grid{
-display:grid; 
-/* Activa layout tipo grilla (mejor que flex para formularios complejos) */
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  margin-top:60px;
+  text-align:center;
+}
 
-grid-template-columns:repeat(3,1fr); 
-/* Define 3 columnas iguales */
+.metric{
+  background:#111827;
+  padding:30px;
+  border-radius:10px;
+}
 
-gap:15px; 
-/* Espacio entre los campos */
+.metric h3{
+  font-size:32px;
+  color:#1e90ff;
+  margin-bottom:10px;
+}
 
-margin-top:30px; 
-/* Separación respecto al título */
+.metric p{
+  color:#cbd5e1;
 }
 
 /* =========================
-PRIMERA FILA
-Nombre + Apellido
+INDUSTRIAS
 ========================= */
 
-.form-grid input:nth-child(1){
-grid-column:span 1; 
-/* Nombre ocupa 1 columna */
+.industries{
+  margin-top:50px;
 }
 
-.form-grid input:nth-child(2){
-grid-column:span 2; 
-/* Apellido ocupa 2 columnas (queda más largo) */
-}
-
-/* =========================
-SEGUNDA FILA
-Empresa - Email - Teléfono
-========================= */
-
-.form-grid input:nth-child(3),
-.form-grid input:nth-child(4),
-.form-grid input:nth-child(5){
-grid-column:span 1; 
-/* Cada uno ocupa 1 columna */
+.badge{
+  display:inline-block;
+  margin:6px;
+  padding:8px 14px;
+  background:#1e293b;
+  border-radius:20px;
+  font-size:13px;
+  color:#94a3b8;
 }
 
 /* =========================
-MENSAJE (TERCERA FILA)
-========================= */
-
-.form-grid textarea{
-grid-column:span 3; 
-/* Ocupa las 3 columnas completas */
-
-min-height:140px; 
-/* Altura mínima (aprox 4 líneas visibles) */
-
-resize:vertical; 
-/* Permite agrandar solo en vertical */
-}
-
-/* =========================
-BOTÓN
-========================= */
-
-.form-grid button{
-grid-column:span 3; 
-/* Ocupa toda la fila */
-
-max-width:200px; 
-/* Limita el ancho del botón */
-
-margin:auto; 
-/* Lo centra horizontalmente */
-
-padding:12px; 
-/* Espaciado interno */
-
-background:#0d6efd; 
-/* Color azul */
-
-color:white; 
-/* Texto blanco */
-
-border:none; 
-/* Sin borde */
-
-border-radius:5px; 
-/* Bordes redondeados */
-
-cursor:pointer; 
-/* Cambia cursor al pasar el mouse */
-}
-
-/* =========================
-INPUTS Y TEXTAREA
-========================= */
-
-.form-grid input,
-.form-grid textarea{
-width:100%; 
-/* Ocupan todo el ancho disponible */
-
-padding:12px; 
-/* Espacio interno */
-
-border:1px solid #ccc; 
-/* Borde gris */
-
-border-radius:5px; 
-/* Bordes redondeados */
-
-font-size:14px; 
-/* Tamaño de letra */
-}
-
-/* =========================
-RESPONSIVE (CELULAR)
-========================= */
-
-@media(max-width:768px){
-
-.form-grid{
-grid-template-columns:1fr; 
-/* Cambia a una sola columna */
-}
-
-.form-grid textarea,
-.form-grid button{
-grid-column:span 1; 
-/* Ocupan solo una columna */
-}
-
-}
-}
-
-/* =========================
-SECCIÓN QUIÉNES SOMOS - TEXTO
+QUIENES SOMOS TEXTO
 ========================= */
 
 .texto-quienes{
-
-  max-width:800px; 
-  /* limita el ancho del texto para que no quede muy largo y sea más legible */
-
-  margin:30px auto; 
-  /* centra el bloque horizontalmente y agrega espacio arriba/abajo */
-
-  text-align:justify; 
-  /* justifica el texto (alineado prolijo tipo documento profesional) */
-
-  line-height:1.8; 
-  /* aumenta el espacio entre líneas → mejora la lectura */
-
-  font-size:17px; 
-  /* tamaño de letra levemente mayor para lectura cómoda */
-
-  color:#cbd5e1; 
-  /* color gris claro coherente con tu paleta (no blanco puro) */
-
-  padding:0 10px; 
-  /* pequeño espacio lateral para que no quede pegado en mobile */
-
-}
-
-#contacto h2{ /* Título contacto */
-margin-bottom:10px; /* Separación */
-}
-
-.contacto-container{ /* Contenedor flex */
-display:flex; /* Flexbox */
-gap:40px; /* Espacio */
-margin-top:40px; /* Separación */
-align-items:flex-start; /* Alineación */
-justify-content:center; /* Centrado */
-flex-wrap:wrap; /* Permite bajar elementos */
-}
-
-.contacto-info{ /* Info contacto */
-flex:1; /* Ocupa espacio */
-min-width:250px; /* Mínimo ancho */
-text-align:left; /* Alineado izquierda */
-font-size:16px; /* Tamaño */
-}
-
-.contacto-info p{ /* Párrafos */
-margin-bottom:15px; /* Separación */
+  max-width:800px; /* Limita ancho */
+  margin:30px auto; /* Centra */
+  text-align:justify; /* Justifica */
+  line-height:1.8; /* Interlineado */
+  font-size:17px; /* Tamaño */
+  color:#cbd5e1; /* Gris claro */
+  padding:0 10px; /* Espacio lateral */
 }
 
 /* =========================
-FORMULARIO PROFESIONAL FIX
+CONTACTO
+========================= */
+
+#contacto{
+  padding-top:100px; /* Compensa header fijo */
+}
+
+.contacto-container{
+  display:flex;
+  gap:40px;
+  margin-top:40px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.contacto-info{
+  flex:1;
+  min-width:250px;
+  text-align:left;
+}
+
+/* =========================
+FORMULARIO PROFESIONAL
 ========================= */
 
 .form-grid{
   display:grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr); /* 6 columnas */
   gap:15px;
   margin-top:30px;
-  width:100%;
 }
 
-/* INPUTS */
+/* CAMPOS */
 
 .form-grid input,
 .form-grid textarea{
@@ -404,35 +290,22 @@ FORMULARIO PROFESIONAL FIX
   color:#94a3b8;
 }
 
-/* DISTRIBUCIÓN CORRECTA */
+/* DISTRIBUCION */
 
-.form-grid input[name="nombre"]{
-  grid-column: span 3;
-}
+.form-grid input[name="nombre"]{ grid-column: span 3; }
+.form-grid input[name="apellido"]{ grid-column: span 3; }
 
-.form-grid input[name="apellido"]{
-  grid-column: span 3;
-}
-
-.form-grid input[name="empresa"]{
-  grid-column: span 2;
-}
-
-.form-grid input[name="email"]{
-  grid-column: span 2;
-}
-
-.form-grid input[name="telefono"]{
-  grid-column: span 2;
-}
+.form-grid input[name="empresa"]{ grid-column: span 2; }
+.form-grid input[name="email"]{ grid-column: span 2; }
+.form-grid input[name="telefono"]{ grid-column: span 2; }
 
 .form-grid textarea{
   grid-column: span 6;
-  min-height:140px;
+  min-height:140px; /* 4 líneas visibles */
   resize:vertical;
 }
 
-/* BOTÓN */
+/* BOTON */
 
 .form-grid button{
   grid-column: span 6;
@@ -450,9 +323,80 @@ FORMULARIO PROFESIONAL FIX
   background:#b91c1c;
 }
 
-/* RESPONSIVE */
+/* =========================
+FOOTER
+========================= */
+
+footer{
+  background:#000;
+  padding:25px 0;
+  text-align:center;
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+.whatsapp img{
+  width:30px;
+  filter:invert(1);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
 
 @media(max-width:768px){
+
+  .container{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  nav a{
+    margin:5px 10px;
+  }
+
+  .hero{
+    height:70vh;
+  }
+
+  .hero-text h1{
+    font-size:32px;
+  }
+
+  .hero-text p{
+    font-size:16px;
+  }
+
+  .contacto-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .contacto-info{
+    text-align:center;
+  }
 
   .form-grid{
     grid-template-columns:1fr;
@@ -463,99 +407,5 @@ FORMULARIO PROFESIONAL FIX
   .form-grid button{
     grid-column: span 1 !important;
   }
-
-}
-#contacto input,
-#contacto textarea{ /* Inputs y textarea */
-width:100%; /* Ancho completo */
-padding:12px; /* Espaciado */
-border:1px solid #ccc; /* Borde */
-border-radius:5px; /* Bordes */
-font-size:15px; /* Tamaño */
-}
-
-#contacto textarea{ /* Área de texto */
-min-height:140px; /* Altura mínima */
-resize:vertical; /* Permite agrandar vertical */
-display:block; /* Comportamiento bloque */
-}
-
-#contacto button{ /* Botón */
-background:#0d6efd; /* Color */
-color:white; /* Texto */
-border:none; /* Sin borde */
-padding:12px; /* Espaciado */
-border-radius:5px; /* Bordes */
-cursor:pointer; /* Cursor */
-transition:0.3s; /* Animación */
-}
-
-footer{ /* Pie de página */
-background:#000; /* Fondo */
-padding:25px 0; /* Espaciado */
-text-align:center; /* Centrado */
-}
-
-.whatsapp{ /* Botón flotante */
-position:fixed; /* Fijo */
-bottom:25px; /* Abajo */
-right:25px; /* Derecha */
-width:65px; /* Tamaño */
-height:65px;
-background:#25D366; /* Verde WhatsApp */
-border-radius:50%; /* Circular */
-display:flex; /* Centrado */
-align-items:center;
-justify-content:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.3); /* Sombra */
-z-index:1000; /* Prioridad */
-}
-
-.whatsapp img{ /* Ícono */
-width:30px; /* Tamaño */
-filter:invert(1); /* Color blanco */
-}
-
-@media(max-width:768px){ /* Responsive móvil */
-
-.container{
-flex-direction:column; /* Apila */
-gap:10px;
-}
-
-nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-nav a{
-margin:5px 10px;
-}
-
-.hero{
-height:70vh;
-}
-
-.hero-text h1{
-font-size:32px;
-}
-
-.hero-text p{
-font-size:16px;
-}
-
-.logo{
-font-size:18px;
-}
-
-.contacto-container{
-flex-direction:column; /* Apila contacto */
-text-align:center;
-}
-
-.contacto-info{
-text-align:center;
-}
 
 }
