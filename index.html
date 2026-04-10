@@ -258,11 +258,23 @@ y adaptadas a las necesidades de cada industria.
 <p>📞 +54 9 11 4424 7440</p>
 </div>
 
-<form action="https://formspree.io/f/xpqylnwl" method="POST"> <!-- Formulario -->
-<input type="text" name="nombre" placeholder="Nombre" required> <!-- Campo nombre -->
-<input type="email" name="email" placeholder="Email" required> <!-- Campo email -->
-<textarea name="mensaje" placeholder="Consulta"></textarea> <!-- Campo mensaje -->
-<button type="submit">Enviar consulta</button> <!-- Botón -->
+<form action="https://formspree.io/f/xpqylnwl" method="POST" class="form-grid">
+
+  <!-- FILA 1 -->
+  <input type="text" name="nombre" placeholder="Nombre" required>
+  <input type="text" name="apellido" placeholder="Apellido">
+
+  <!-- FILA 2 -->
+  <input type="text" name="empresa" placeholder="Empresa">
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="text" name="telefono" placeholder="Teléfono">
+
+  <!-- FILA 3 -->
+  <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+
+  <!-- BOTÓN -->
+  <button type="submit">Enviar</button>
+
 </form>
 
 </div>
