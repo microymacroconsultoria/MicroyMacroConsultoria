@@ -321,19 +321,99 @@ font-size:16px; /* Tamaño */
 margin-bottom:15px; /* Separación */
 }
 
-#contacto form{ /* Formulario */
-flex:1; /* Ocupa espacio */
-min-width:300px; /* Mínimo ancho */
-max-width:500px; /* Máximo ancho */
-display:flex; /* Flex */
-flex-direction:column; /* Vertical */
-gap:15px; /* Espacio */
-background:white; /* Fondo */
-padding:30px; /* Espaciado */
-border-radius:8px; /* Bordes */
-box-shadow:0 10px 30px rgba(0,0,0,0.1); /* Sombra */
+/* =========================
+FORMULARIO PROFESIONAL FIX
+========================= */
+
+.form-grid{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:15px;
+  margin-top:30px;
+  width:100%;
 }
 
+/* INPUTS */
+
+.form-grid input,
+.form-grid textarea{
+  width:100%;
+  background:#0f1720;
+  color:white;
+  border:1px solid #2a3441;
+  padding:12px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* PLACEHOLDER */
+
+.form-grid input::placeholder,
+.form-grid textarea::placeholder{
+  color:#94a3b8;
+}
+
+/* DISTRIBUCIÓN CORRECTA */
+
+.form-grid input[name="nombre"]{
+  grid-column: span 3;
+}
+
+.form-grid input[name="apellido"]{
+  grid-column: span 3;
+}
+
+.form-grid input[name="empresa"]{
+  grid-column: span 2;
+}
+
+.form-grid input[name="email"]{
+  grid-column: span 2;
+}
+
+.form-grid input[name="telefono"]{
+  grid-column: span 2;
+}
+
+.form-grid textarea{
+  grid-column: span 6;
+  min-height:140px;
+  resize:vertical;
+}
+
+/* BOTÓN */
+
+.form-grid button{
+  grid-column: span 6;
+  background:#e11d2e;
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.form-grid button:hover{
+  background:#b91c1c;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid input,
+  .form-grid textarea,
+  .form-grid button{
+    grid-column: span 1 !important;
+  }
+
+}
 #contacto input,
 #contacto textarea{ /* Inputs y textarea */
 width:100%; /* Ancho completo */
