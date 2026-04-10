@@ -1,133 +1,118 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Define que el documento es HTML5 -->
 
-<html lang="es">
+<html lang="es"> <!-- Elemento raíz de la página, idioma español -->
 
-<head>
+<head> <!-- Cabecera con configuración y recursos -->
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"> <!-- Define codificación UTF-8 (acentos, símbolos, etc.) --> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la web sea responsive en celulares -->
 
-<title>Micro & Macro Consultoría | Ingeniería y Automatización Industrial</title>
+<title>Micro & Macro Consultoría | Ingeniería y Automatización Industrial</title> <!-- Título de la pestaña del navegador -->
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css"> <!-- Vincula el archivo de estilos principal -->
 
-<style>
+<style> <!-- Estilos internos -->
 
-/* ANIMACIONES */
-
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:all 0.8s ease;
+.reveal{ /* Elementos ocultos inicialmente para animación al hacer scroll */
+opacity:0; /* Invisible */
+transform:translateY(40px); /* Desplazado hacia abajo */
+transition:all 0.8s ease; /* Transición suave */
 }
 
-.reveal.active{
-opacity:1;
-transform:translateY(0);
+.reveal.active{ /* Cuando el elemento aparece en pantalla */
+opacity:1; /* Visible */
+transform:translateY(0); /* Vuelve a su posición original */
 }
 
-/* HERO */
-
-.hero{
-animation:zoomHero 12s ease-in-out infinite alternate;
+.hero{ /* Sección principal (hero) */
+animation:zoomHero 12s ease-in-out infinite alternate; /* Animación de zoom constante */
 }
 
-@keyframes zoomHero{
-0%{background-size:100%;}
-100%{background-size:110%;}
+@keyframes zoomHero{ /* Definición de la animación */
+0%{background-size:100%;} /* Tamaño normal */
+100%{background-size:110%;} /* Zoom leve */
 }
 
-/* TARJETAS */
-
-.card{
-transition:transform 0.3s ease, box-shadow 0.3s ease;
+.card{ /* Tarjetas de servicios/proyectos */
+transition:transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
 }
 
-.card:hover{
-transform:translateY(-10px) scale(1.02);
-box-shadow:0 20px 40px rgba(0,0,0,0.4);
+.card:hover{ /* Efecto al pasar el mouse */
+transform:translateY(-10px) scale(1.02); /* Se eleva y agranda un poco */
+box-shadow:0 20px 40px rgba(0,0,0,0.4); /* Sombra más fuerte */
 }
 
-/* CLIENTES */
-
-.slider{
-overflow:hidden;
-margin-top:40px;
+.slider{ /* Contenedor del carrusel de logos */
+overflow:hidden; /* Oculta lo que se sale */
+margin-top:40px; /* Espacio arriba */
 }
 
-.slide-track{
-display:flex;
-gap:60px;
-animation:scroll 20s linear infinite;
+.slide-track{ /* Pista donde se mueven los logos */
+display:flex; /* Alineación horizontal */
+gap:60px; /* Espacio entre logos */
+animation:scroll 20s linear infinite; /* Movimiento continuo */
 }
 
-.slide-track img{
-height:60px;
-opacity:0.7;
-filter:grayscale(100%);
-transition:0.3s;
+.slide-track img{ /* Imágenes de logos */
+height:60px; /* Altura fija */
+opacity:0.7; /* Transparencia */
+filter:grayscale(100%); /* Blanco y negro */
+transition:0.3s; /* Suavidad al interactuar */
 }
 
-.slide-track img:hover{
-opacity:1;
-filter:none;
+.slide-track img:hover{ /* Al pasar el mouse */
+opacity:1; /* Se ve completo */
+filter:none; /* Vuelve a color */
 }
 
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+@keyframes scroll{ /* Animación de desplazamiento */
+0%{transform:translateX(0);} /* Inicio */
+100%{transform:translateX(-50%);} /* Desplazamiento a la izquierda */
 }
 
-/* METRICAS */
-
-.metrics{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:60px;
-text-align:center;
+.metrics{ /* Contenedor de métricas */
+display:grid; /* Grilla */
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); /* Columnas adaptables */
+gap:30px; /* Espaciado */
+margin-top:60px; /* Separación superior */
+text-align:center; /* Centrado */
 }
 
-.metric{
-background:#111827;
-padding:30px;
-border-radius:10px;
+.metric{ /* Cada bloque de métrica */
+background:#111827; /* Fondo oscuro */
+padding:30px; /* Espaciado interno */
+border-radius:10px; /* Bordes redondeados */
 }
 
-.metric h3{
-font-size:32px;
-color:#1e90ff;
-margin-bottom:10px;
+.metric h3{ /* Número principal */
+font-size:32px; /* Grande */
+color:#1e90ff; /* Azul destacado */
+margin-bottom:10px; /* Espacio abajo */
 }
 
-.metric p{
-color:#cbd5e1;
+.metric p{ /* Texto descriptivo */
+color:#cbd5e1; /* Gris claro */
 }
 
-/* INDUSTRIAS */
-
-.industries{
-margin-top:50px;
+.industries{ /* Contenedor de industrias */
+margin-top:50px; /* Espacio superior */
 }
 
-.badge{
-display:inline-block;
-margin:6px;
-padding:8px 14px;
-background:#1e293b;
-border-radius:20px;
-font-size:13px;
-color:#94a3b8;
+.badge{ /* Etiquetas */
+display:inline-block; /* En línea */
+margin:6px; /* Separación */
+padding:8px 14px; /* Espaciado interno */
+background:#1e293b; /* Fondo oscuro */
+border-radius:20px; /* Forma tipo cápsula */
+font-size:13px; /* Tamaño chico */
+color:#94a3b8; /* Gris claro */
 }
 
-/* MENSAJE FINAL */
-
-.closing{
-margin-top:60px;
-font-size:18px;
-color:#cbd5e1;
-max-width:700px;
-margin-left:auto;
+.closing{ /* Mensaje final */
+margin-top:60px; /* Separación */
+font-size:18px; /* Tamaño medio */
+color:#cbd5e1; /* Gris claro */
+max-width:700px; /* Ancho máximo */
+margin-left:auto; /* Centrado */
 margin-right:auto;
 }
 
@@ -135,14 +120,14 @@ margin-right:auto;
 
 </head>
 
-<body>
+<body> <!-- Contenido visible -->
 
-<header>
-<div class="container">
-<div class="logo">Micro & Macro Consultoría</div>
+<header> <!-- Encabezado fijo -->
+<div class="container"> <!-- Contenedor principal -->
+<div class="logo">Micro & Macro Consultoría</div> <!-- Nombre/logo -->
 
-<nav>
-<a href="#servicios">Servicios</a>
+<nav> <!-- Menú de navegación -->
+<a href="#servicios">Servicios</a> <!-- Link a sección -->
 <a href="#consultoria">Consultoría</a>
 <a href="#proyectos">Proyectos</a>
 <a href="#contacto">Contacto</a>
@@ -150,23 +135,24 @@ margin-right:auto;
 </div>
 </header>
 
-<section class="hero">
-<div class="overlay"></div>
+<section class="hero"> <!-- Sección principal -->
+<div class="overlay"></div> <!-- Oscurece fondo para mejorar lectura -->
 
-<div class="hero-text reveal">
-<h1>Ingeniería y Automatización Industrial</h1>
-<p>SCADA · PLC · Sistemas eléctricos · Integración industrial</p>
+<div class="hero-text reveal"> <!-- Texto con animación -->
+<h1>Ingeniería y Automatización Industrial</h1> <!-- Título -->
+<p>SCADA · PLC · Sistemas eléctricos · Integración industrial</p> <!-- Subtítulo -->
 </div>
 </section>
 
-<section id="servicios" class="section reveal">
+<section id="servicios" class="section reveal"> <!-- Sección servicios -->
 <h2>Servicios</h2>
 
-<div class="grid">
-<div class="card">
-<img src="images/plc-control.jpg">
-<h3>Automatización Industrial</h3>
-<p>Programación PLC, HMI y SCADA.</p>
+<div class="grid"> <!-- Contenedor en grilla -->
+
+<div class="card"> <!-- Tarjeta -->
+<img src="images/plc-control.jpg"> <!-- Imagen -->
+<h3>Automatización Industrial</h3> <!-- Título -->
+<p>Programación PLC, HMI y SCADA.</p> <!-- Descripción -->
 </div>
 
 <div class="card">
@@ -180,21 +166,21 @@ margin-right:auto;
 <h3>Integración de Sistemas</h3>
 <p>Automatización de procesos industriales.</p>
 </div>
+
 </div>
 </section>
 
-<section id="consultoria" class="section section-grey reveal">
+<section id="consultoria" class="section section-grey reveal"> <!-- Consultoría -->
 <h2>Consultoría y Pericial</h2>
-<p>
-Asesoramiento en sistemas eléctricos y automatización.
-Auditorías, análisis de fallas y evaluación de proyectos.
-</p>
+<p>Asesoramiento en sistemas eléctricos y automatización.
+Auditorías, análisis de fallas y evaluación de proyectos.</p>
 </section>
 
-<section id="proyectos" class="section reveal">
+<section id="proyectos" class="section reveal"> <!-- Proyectos -->
 <h2>Proyectos</h2>
 
 <div class="grid">
+
 <div class="card">
 <img src="images/hero-industrial.jpg">
 <h3>Sistemas SCADA</h3>
@@ -206,36 +192,25 @@ Auditorías, análisis de fallas y evaluación de proyectos.
 <h3>Control con PLC</h3>
 <p>Arquitecturas con PLC M580.</p>
 </div>
+
 </div>
 </section>
 
-<!-- CLIENTES -->
-
-<section class="section reveal">
+<section class="section reveal"> <!-- Clientes -->
 
 <h2>Nuestros Clientes</h2>
 
-<div class="slider">
-<div class="slide-track">
+<div class="slider"> <!-- Carrusel -->
+<div class="slide-track"> <!-- Movimiento -->
 
-<img src="images/trend.png">
-<img src="images/aires.png">
-<img src="images/bhy.svg">
-<img src="images/decavial.jpg">
-<img src="images/mfg enarcon.jpeg">
+<img src="images/trend.png"> <!-- Logo --> <img src="images/aires.png"> <img src="images/bhy.svg"> <img src="images/decavial.jpg"> <img src="images/mfg enarcon.jpeg">
 
-<img src="images/trend.png">
-<img src="images/aires.png">
-<img src="images/bhy.svg">
-<img src="images/decavial.jpg">
-<img src="images/mfg enarcon.jpeg">
+<img src="images/trend.png"> <!-- Repetición para loop --> <img src="images/aires.png"> <img src="images/bhy.svg"> <img src="images/decavial.jpg"> <img src="images/mfg enarcon.jpeg">
 
 </div>
 </div>
 
-<!-- METRICAS -->
-
-<div class="metrics reveal">
+<div class="metrics reveal"> <!-- Métricas -->
 
 <div class="metric">
 <h3>+15</h3>
@@ -254,70 +229,64 @@ Auditorías, análisis de fallas y evaluación de proyectos.
 
 </div>
 
-<!-- INDUSTRIAS -->
-
-<div class="industries reveal">
+<div class="industries reveal"> <!-- Industrias -->
 
 <span class="badge">Oil & Gas</span> <span class="badge">Energía</span> <span class="badge">Industria</span> <span class="badge">Infraestructura</span> <span class="badge">Automatización</span>
 
 </div>
 
-<!-- MENSAJE -->
-
-<p class="closing reveal">
+<p class="closing reveal"> <!-- Mensaje final -->
 Brindamos soluciones de ingeniería confiables, orientadas a resultados
 y adaptadas a las necesidades de cada industria.
 </p>
 
 </section>
 
-<section id="contacto" class="section section-grey reveal">
+<section id="contacto" class="section section-grey reveal"> <!-- Contacto -->
 <h2>Contacto</h2>
 
-<div class="contacto-container">
+<div class="contacto-container"> <!-- Contenedor flexible -->
 
-  <!-- INFO -->
-  <div class="contacto-info">
-    <p>📧 contacto@microymacro.com.ar</p>
-    <p>📞 +54 9 11 4424 7440</p>
-  </div>
+<div class="contacto-info"> <!-- Información -->
+<p>📧 contacto@microymacro.com.ar</p>
+<p>📞 +54 9 11 4424 7440</p>
+</div>
 
-  <!-- FORM -->
-  <form action="https://formspree.io/f/xpqylnwl" method="POST">
-    <input type="text" name="nombre" placeholder="Nombre" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="mensaje" placeholder="Consulta"></textarea>
-    <button type="submit">Enviar consulta</button>
-  </form>
+<form action="https://formspree.io/f/xpqylnwl" method="POST"> <!-- Formulario -->
+<input type="text" name="nombre" placeholder="Nombre" required> <!-- Campo nombre -->
+<input type="email" name="email" placeholder="Email" required> <!-- Campo email -->
+<textarea name="mensaje" placeholder="Consulta"></textarea> <!-- Campo mensaje -->
+<button type="submit">Enviar consulta</button> <!-- Botón -->
+</form>
 
 </div>
 </section>
-  
-<footer>
+
+<footer> <!-- Pie de página -->
 <p>© Micro & Macro Consultoría</p>
 </footer>
 
 <a href="https://wa.me/5491144247440?text=Hola%20quisiera%20realizar%20una%20consulta"
 class="whatsapp"
-target="_blank"> <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg"> </a>
+target="_blank"> <!-- Botón flotante WhatsApp --> <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg"> </a>
 
-<script>
+<script> <!-- JavaScript -->
 
-function reveal(){
-let reveals=document.querySelectorAll(".reveal");
+function reveal(){ /* Función para animar elementos al hacer scroll */
+let reveals=document.querySelectorAll(".reveal"); /* Selecciona elementos */
 
-reveals.forEach((el)=>{
-let windowHeight=window.innerHeight;
-let elementTop=el.getBoundingClientRect().top;
+reveals.forEach((el)=>{ /* Recorre cada uno */
+let windowHeight=window.innerHeight; /* Alto de pantalla */
+let elementTop=el.getBoundingClientRect().top; /* Posición del elemento */
 
-if(elementTop<windowHeight-120){
-el.classList.add("active");
+if(elementTop<windowHeight-120){ /* Si entra en pantalla */
+el.classList.add("active"); /* Activa animación */
 }
 });
 }
 
-window.addEventListener("load",reveal);
-window.addEventListener("scroll",reveal);
+window.addEventListener("load",reveal); /* Ejecuta al cargar */
+window.addEventListener("scroll",reveal); /* Ejecuta al hacer scroll */
 
 </script>
 
