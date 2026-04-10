@@ -149,30 +149,63 @@ border-radius:6px;
 transition:0.3s;
 }*/
 
-.btn-clientes:hover
+.btn-clientes:hover{
+  background:#0a2c45;
+}
 
 /* FORM */
 
-form{
-display:flex;
-flex-direction:column;
-gap:15px;
-max-width:500px;
-margin:auto;
+/* CONTACTO */
+
+#contacto form{
+  max-width:600px;
+  margin:40px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  background:white;
+  padding:30px;
+  border-radius:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-input,textarea{
-padding:12px;
-border:none;
-border-radius:4px;
+/* INPUTS */
+
+#contacto input,
+#contacto textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:5px;
+  font-size:15px;
 }
 
-button{
-padding:12px;
-background:#0d6efd;
-color:white;
-border:none;
-cursor:pointer;
+/* TEXTAREA */
+
+#contacto textarea{
+  min-height:120px;
+}
+
+/* BOTÓN */
+
+#contacto button{
+  background:#0d6efd;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#contacto button:hover{
+  background:#0b5ed7;
+}
+#contacto h2{
+  margin-bottom:10px;
+}
+#contacto{
+  padding-top:100px;
 }
 
 /* FOOTER */
