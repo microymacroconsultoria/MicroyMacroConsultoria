@@ -1,345 +1,284 @@
-/* =========================
-RESET GENERAL
-========================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+*{ /* Selector universal: aplica a TODOS los elementos */
+margin:0; /* Elimina márgenes por defecto */
+padding:0; /* Elimina padding por defecto */
+box-sizing:border-box; /* Incluye padding y border dentro del tamaño total */
+font-family:Arial, Helvetica, sans-serif; /* Fuente global */
 }
 
-body{
-background:#0b0f14;
-color:white;
-line-height:1.6;
+body{ /* Cuerpo de la página */
+background:#0b0f14; /* Fondo oscuro */
+color:white; /* Texto en blanco */
+line-height:1.6; /* Espaciado entre líneas */
 }
 
-/* =========================
-CONTENEDOR
-========================= */
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
+.container{ /* Contenedor principal */
+width:90%; /* Ocupa el 90% del ancho */
+max-width:1200px; /* Máximo ancho */
+margin:auto; /* Centrado horizontal */
+display:flex; /* Layout flexible */
+justify-content:space-between; /* Separa elementos */
+align-items:center; /* Alinea verticalmente */
 }
 
-/* =========================
-HEADER
-========================= */
-
-header{
-background:#111;
-position:fixed;
-width:100%;
-z-index:1000;
-padding:15px 0;
+header{ /* Encabezado */
+background:#111; /* Fondo oscuro */
+position:fixed; /* Fijo arriba */
+width:100%; /* Ocupa todo el ancho */
+z-index:1000; /* Prioridad sobre otros elementos */
+padding:15px 0; /* Espaciado vertical */
 }
 
-.logo{
-font-weight:bold;
-font-size:20px;
+.logo{ /* Logo */
+font-weight:bold; /* Negrita */
+font-size:20px; /* Tamaño */
 }
 
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:white;
-font-size:15px;
+nav a{ /* Links del menú */
+margin-left:20px; /* Separación entre links */
+text-decoration:none; /* Sin subrayado */
+color:white; /* Color blanco */
+font-size:15px; /* Tamaño */
 }
 
-/* =========================
-HERO
-========================= */
-
-.hero{
-height:90vh;
-background:url("images/hero-industrial.jpg") center/cover no-repeat;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+.hero{ /* Sección principal */
+height:90vh; /* Altura 90% de pantalla */
+background:url("images/hero-industrial.jpg") center/cover no-repeat; /* Imagen de fondo */
+position:relative; /* Para posicionar overlay */
+display:flex; /* Flexbox */
+align-items:center; /* Centrado vertical */
+justify-content:center; /* Centrado horizontal */
+text-align:center; /* Texto centrado */
 }
 
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
+.overlay{ /* Capa oscura sobre imagen */
+position:absolute; /* Posición absoluta */
+width:100%; /* Ancho total */
+height:100%; /* Alto total */
+background:rgba(0,0,0,0.35); /* Oscurece imagen */
 }
 
-.hero-text{
-position:relative;
-z-index:2;
-max-width:700px;
+.hero-text{ /* Texto del hero */
+position:relative; /* Para estar sobre overlay */
+z-index:2; /* Prioridad superior */
+max-width:700px; /* Limita ancho */
 }
 
-.hero-text h1{
-font-size:48px;
-margin-bottom:12px;
-text-shadow:0px 3px 12px rgba(0,0,0,0.9);
+.hero-text h1{ /* Título principal */
+font-size:48px; /* Tamaño grande */
+margin-bottom:12px; /* Espacio abajo */
+text-shadow:0px 3px 12px rgba(0,0,0,0.9); /* Sombra */
 }
 
-.hero-text p{
-font-size:22px;
-text-shadow:0px 2px 10px rgba(0,0,0,0.9);
+.hero-text p{ /* Subtítulo */
+font-size:22px; /* Tamaño */
+text-shadow:0px 2px 10px rgba(0,0,0,0.9); /* Sombra */
 }
 
-/* =========================
-SECCIONES
-========================= */
-
-.section{
-padding:80px 20px;
-max-width:1200px;
-margin:auto;
-text-align:center;
+.section{ /* Secciones generales */
+padding:80px 20px; /* Espaciado interno */
+max-width:1200px; /* Ancho máximo */
+margin:auto; /* Centrado */
+text-align:center; /* Texto centrado */
 }
 
-.section-grey{
-background:#f3f3f3;
-color:#333;
+.section-grey{ /* Secciones claras */
+background:#f3f3f3; /* Fondo gris claro */
+color:#333; /* Texto oscuro */
 }
 
-/* =========================
-GRID
-========================= */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:40px;
+.grid{ /* Layout en grilla */
+display:grid; /* Grid */
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* Columnas adaptables */
+gap:30px; /* Espacio entre elementos */
+margin-top:40px; /* Separación superior */
 }
 
-/* =========================
-TARJETAS
-========================= */
-
-.card{
-background:#151a21;
-padding:20px;
-border-radius:6px;
-transition:transform 0.3s ease, box-shadow 0.3s ease;
+.card{ /* Tarjetas */
+background:#151a21; /* Fondo oscuro */
+padding:20px; /* Espaciado interno */
+border-radius:6px; /* Bordes redondeados */
+transition:transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
 }
 
-.card:hover{
-transform:translateY(-8px) scale(1.02);
-box-shadow:0 15px 35px rgba(0,0,0,0.4);
+.card:hover{ /* Hover tarjeta */
+transform:translateY(-8px) scale(1.02); /* Eleva y agranda */
+box-shadow:0 15px 35px rgba(0,0,0,0.4); /* Sombra */
 }
 
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:4px;
-transition:transform 0.3s ease;
+.card img{ /* Imagen tarjeta */
+width:100%; /* Ancho completo */
+height:180px; /* Altura fija */
+object-fit:cover; /* Ajusta imagen */
+border-radius:4px; /* Bordes redondeados */
+transition:transform 0.3s ease; /* Animación */
 }
 
-.card:hover img{
-transform:scale(1.05);
+.card:hover img{ /* Hover imagen */
+transform:scale(1.05); /* Zoom */
 }
 
-/* =========================
-CLIENTES (SLIDER)
-========================= */
-
-.slider{
-overflow:hidden;
-margin-top:40px;
+.slider{ /* Contenedor carrusel */
+overflow:hidden; /* Oculta desbordes */
+margin-top:40px; /* Espacio superior */
 }
 
-.slide-track{
-display:flex;
-gap:60px;
-animation:scroll 20s linear infinite;
+.slide-track{ /* Pista de logos */
+display:flex; /* Horizontal */
+gap:60px; /* Espacio */
+animation:scroll 20s linear infinite; /* Movimiento continuo */
 }
 
-.slide-track img{
-height:80px;
-opacity:0.7;
-filter:grayscale(100%);
-transition:0.3s;
+.slide-track img{ /* Logos */
+height:80px; /* Altura */
+opacity:0.7; /* Transparencia */
+filter:grayscale(100%); /* Blanco y negro */
+transition:0.3s; /* Animación */
 }
 
-.slide-track img:hover{
-opacity:1;
-filter:none;
+.slide-track img:hover{ /* Hover logos */
+opacity:1; /* Visible */
+filter:none; /* Color original */
 }
 
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+@keyframes scroll{ /* Animación scroll */
+0%{transform:translateX(0);} /* Inicio */
+100%{transform:translateX(-50%);} /* Desplazamiento */
 }
 
-/* =========================
-METRICAS
-========================= */
-
-.metrics{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:60px;
-text-align:center;
+.metrics{ /* Contenedor métricas */
+display:grid; /* Grilla */
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); /* Responsive */
+gap:30px; /* Espaciado */
+margin-top:60px; /* Separación */
+text-align:center; /* Centrado */
 }
 
-.metric{
-background:#111827;
-padding:30px;
-border-radius:10px;
+.metric{ /* Tarjeta métrica */
+background:#111827; /* Fondo */
+padding:30px; /* Espaciado */
+border-radius:10px; /* Bordes */
 }
 
-.metric h3{
-font-size:32px;
-color:#1e90ff;
-margin-bottom:10px;
+.metric h3{ /* Número */
+font-size:32px; /* Tamaño */
+color:#1e90ff; /* Azul */
+margin-bottom:10px; /* Espacio */
 }
 
-.metric p{
-color:#cbd5e1;
+.metric p{ /* Texto */
+color:#cbd5e1; /* Gris claro */
 }
 
-/* =========================
-INDUSTRIAS
-========================= */
-
-.industries{
-margin-top:50px;
+.industries{ /* Contenedor industrias */
+margin-top:50px; /* Separación */
 }
 
-.badge{
-display:inline-block;
-margin:6px;
-padding:8px 14px;
-background:#1e293b;
-border-radius:20px;
-font-size:13px;
-color:#94a3b8;
+.badge{ /* Etiquetas */
+display:inline-block; /* Inline */
+margin:6px; /* Espacio */
+padding:8px 14px; /* Padding */
+background:#1e293b; /* Fondo */
+border-radius:20px; /* Forma */
+font-size:13px; /* Tamaño */
+color:#94a3b8; /* Color */
 }
 
-/* =========================
-CONTACTO
-========================= */
-
-#contacto{
-padding-top:100px;
+#contacto{ /* Sección contacto */
+padding-top:100px; /* Espacio superior extra */
 }
 
-#contacto h2{
-margin-bottom:10px;
+#contacto h2{ /* Título contacto */
+margin-bottom:10px; /* Separación */
 }
 
-.contacto-container{
-display:flex;
-gap:40px;
-margin-top:40px;
-align-items:flex-start;
-justify-content:center;
-flex-wrap:wrap;
+.contacto-container{ /* Contenedor flex */
+display:flex; /* Flexbox */
+gap:40px; /* Espacio */
+margin-top:40px; /* Separación */
+align-items:flex-start; /* Alineación */
+justify-content:center; /* Centrado */
+flex-wrap:wrap; /* Permite bajar elementos */
 }
 
-.contacto-info{
-flex:1;
-min-width:250px;
-text-align:left;
-font-size:16px;
+.contacto-info{ /* Info contacto */
+flex:1; /* Ocupa espacio */
+min-width:250px; /* Mínimo ancho */
+text-align:left; /* Alineado izquierda */
+font-size:16px; /* Tamaño */
 }
 
-.contacto-info p{
-margin-bottom:15px;
+.contacto-info p{ /* Párrafos */
+margin-bottom:15px; /* Separación */
 }
 
-#contacto form{
-flex:1;
-min-width:300px;
-max-width:500px;
-display:flex;
-flex-direction:column;
-gap:15px;
-background:white;
-padding:30px;
-border-radius:8px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+#contacto form{ /* Formulario */
+flex:1; /* Ocupa espacio */
+min-width:300px; /* Mínimo ancho */
+max-width:500px; /* Máximo ancho */
+display:flex; /* Flex */
+flex-direction:column; /* Vertical */
+gap:15px; /* Espacio */
+background:white; /* Fondo */
+padding:30px; /* Espaciado */
+border-radius:8px; /* Bordes */
+box-shadow:0 10px 30px rgba(0,0,0,0.1); /* Sombra */
 }
 
 #contacto input,
-#contacto textarea{
-width:100%;
-padding:12px;
-border:1px solid #ccc;
-border-radius:5px;
-font-size:15px;
-}
-#contacto textarea{
-min-height:140px;
-resize:vertical;
-display:block;
-}
-#contacto textarea{
-min-height:140px;   /* altura real tipo 4 líneas */
-resize:vertical;
+#contacto textarea{ /* Inputs y textarea */
+width:100%; /* Ancho completo */
+padding:12px; /* Espaciado */
+border:1px solid #ccc; /* Borde */
+border-radius:5px; /* Bordes */
+font-size:15px; /* Tamaño */
 }
 
-#contacto button{
-background:#0d6efd;
-color:white;
-border:none;
-padding:12px;
-border-radius:5px;
-cursor:pointer;
-transition:0.3s;
+#contacto textarea{ /* Área de texto */
+min-height:140px; /* Altura mínima */
+resize:vertical; /* Permite agrandar vertical */
+display:block; /* Comportamiento bloque */
 }
 
-#contacto button:hover
-
-/* =========================
-FOOTER
-========================= */
-
-footer{
-background:#000;
-padding:25px 0;
-text-align:center;
+#contacto button{ /* Botón */
+background:#0d6efd; /* Color */
+color:white; /* Texto */
+border:none; /* Sin borde */
+padding:12px; /* Espaciado */
+border-radius:5px; /* Bordes */
+cursor:pointer; /* Cursor */
+transition:0.3s; /* Animación */
 }
 
-/* =========================
-WHATSAPP
-========================= */
+footer{ /* Pie de página */
+background:#000; /* Fondo */
+padding:25px 0; /* Espaciado */
+text-align:center; /* Centrado */
+}
 
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
+.whatsapp{ /* Botón flotante */
+position:fixed; /* Fijo */
+bottom:25px; /* Abajo */
+right:25px; /* Derecha */
+width:65px; /* Tamaño */
 height:65px;
-background:#25D366;
-border-radius:50%;
-display:flex;
+background:#25D366; /* Verde WhatsApp */
+border-radius:50%; /* Circular */
+display:flex; /* Centrado */
 align-items:center;
 justify-content:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-z-index:1000;
+box-shadow:0 4px 10px rgba(0,0,0,0.3); /* Sombra */
+z-index:1000; /* Prioridad */
 }
 
-.whatsapp img{
-width:30px;
-filter:invert(1);
+.whatsapp img{ /* Ícono */
+width:30px; /* Tamaño */
+filter:invert(1); /* Color blanco */
 }
 
-/* =========================
-RESPONSIVE
-========================= */
-
-@media(max-width:768px){
+@media(max-width:768px){ /* Responsive móvil */
 
 .container{
-flex-direction:column;
+flex-direction:column; /* Apila */
 gap:10px;
 }
 
@@ -370,7 +309,7 @@ font-size:18px;
 }
 
 .contacto-container{
-flex-direction:column;
+flex-direction:column; /* Apila contacto */
 text-align:center;
 }
 
