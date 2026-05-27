@@ -322,34 +322,65 @@ el.classList.add("active"); /* Activa animación */
 window.addEventListener("load",reveal); /* Ejecuta al cargar */
 window.addEventListener("scroll",reveal); /* Ejecuta al hacer scroll */
 
-  const counters = document.querySelectorAll('.counter');
+/* Selecciona todos los elementos que tengan la clase "counter" */
+const counters = document.querySelectorAll('.counter');
 
-counters.forEach(counter => {
+/* Función principal que anima todos los contadores */
+function animateCounters() {
 
-    counter.innerText = '0';
+    /* Recorre cada contador encontrado */
+    counters.forEach(counter => {
 
-    const updateCounter = () => {
+        /* Reinicia el valor visible a 0 */
+        counter.innerText = '0';
 
+        /* Obtiene el valor final definido en data-target */
         const target = +counter.getAttribute('data-target');
-        const current = +counter.innerText;
 
-        const increment = target / 80;
+        /* Calcula cuánto aumenta en cada paso */
+        const increment = target / 100;
 
-        if(current < target){
+        /* Función interna que actualiza el contador */
+        function updateCounter() {
 
-            counter.innerText = `${Math.ceil(current + increment)}`;
+            /* Obtiene el valor actual mostrado */
+            const current = +counter.innerText;
 
-            setTimeout(updateCounter, 20);
+            /* Verifica si todavía no llegó al valor final */
+            if (current < target) {
 
-        } else {
+                /* Incrementa el número mostrado */
+                counter.innerText = `${Math.ceil(current + increment)}`;
 
-            counter.innerText = target;
+                /* Espera 20 milisegundos y vuelve a ejecutar */
+                setTimeout(updateCounter, 20);
 
+            } else {
+
+                /* Cuando llega al final fija exactamente el número objetivo */
+                counter.innerText = target;
+
+            }
         }
-    };
 
-    updateCounter();
-});
+        /* Inicia la animación del contador */
+        updateCounter();
+    });
+}
+
+/* Ejecuta la animación apenas carga la página */
+animateCounters();
+
+/* 
+Cada 3 segundos:
+- reinicia el contador en 0
+- vuelve a ejecutar toda la animación
+*/
+setInterval(() => {
+
+    animateCounters();
+
+}, 3000);
 </script>
 
 </body>
